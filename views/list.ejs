@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="image/favicon.ico">
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1><%=title%></h1>
+  </div>
+  <div class="box">
+    <form class="" action="/delete" method="post">
+      <% for(var x = 0 ;x<items.length;x++) {  %>
+      <div class="item">
+        <input type="checkbox" name="checkbox" value="<%=items[x]._id%>" onChange="this.form.submit()">
+        <p><%= items[x].name %></p>
+      </div>
+      <%} %>
+      <input type="hidden" name="title" value="<%=title%>">
+
+    </form>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" value="" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="button" value="<%=title%>">+</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
